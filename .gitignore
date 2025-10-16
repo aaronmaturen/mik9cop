@@ -1,0 +1,54 @@
+# WordPress Core Files
+wp-admin/
+wp-includes/
+*.log
+.htaccess
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if using npm/yarn for build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Backup files
+*.sql
+*.sql.gz
+*.bak
+
+# Docker volumes (optional - comment out if you want to track)
+# wordpress_data/
+# db_data/
+
+# Theme-specific
+theme/assets/css/*.map
+theme/assets/js/*.map

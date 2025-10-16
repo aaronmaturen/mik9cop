@@ -1,0 +1,336 @@
+/**
+ * The Events Calendar - Dark Theme Override
+ * Custom dark theme styling for K9 Hero Guardians
+ * Overrides tribe-common-styles CSS variables
+ * Following their --tec- prefix convention
+ */
+
+/* ==========================================================================
+   CSS Custom Properties Override
+   Override at :root for maximum specificity
+   ========================================================================== */
+
+:root,
+.tribe-common,
+.tribe-events {
+  /* Background Colors */
+  --tec-color-background: #0f1419;
+  --tec-color-background-secondary: #1a1f2e;
+  --tec-color-background-tertiary: #252d3d;
+
+  /* Text Colors */
+  --tec-color-text-primary: #e5e7eb;
+  --tec-color-text-secondary: #9ca3af;
+  --tec-color-text-primary-inverted: #0f1419;
+
+  /* Accent Colors */
+  --tec-color-accent-primary: #3b82f6;
+  --tec-color-accent-primary-hover: #2563eb;
+  --tec-color-accent-primary-active: #1d4ed8;
+  --tec-color-accent-secondary: #f59e0b;
+
+  /* Border Colors */
+  --tec-color-border-default: #374151;
+  --tec-color-border-secondary: #4b5563;
+
+  /* Button Colors */
+  --tec-color-button-primary: #3b82f6;
+  --tec-color-button-primary-hover: #2563eb;
+  --tec-color-button-primary-active: #1d4ed8;
+
+  /* Link Colors */
+  --tec-color-link-primary: #3b82f6;
+  --tec-color-link-accent: #f59e0b;
+
+  /* Spacing (maintain their system) */
+  --tec-spacer-0: 4px;
+  --tec-spacer-1: 8px;
+  --tec-spacer-2: 12px;
+  --tec-spacer-3: 16px;
+  --tec-spacer-4: 20px;
+  --tec-spacer-5: 24px;
+
+  /* Border Radius (modern, slightly larger) */
+  --tec-border-radius-default: 6px;
+}
+
+/* Force dark theme on main containers - using double class specificity */
+.tribe-common.tribe-common,
+.tribe-events.tribe-events {
+  background-color: var(--tec-color-background);
+  color: var(--tec-color-text-primary);
+}
+
+/* Specific element overrides with proper specificity */
+.tribe-common .tribe-common-c-svgicon,
+.tribe-common svg,
+.tribe-events svg {
+  background-color: transparent;
+}
+
+/* Force dark backgrounds on white elements */
+.tribe-common .tribe-common-a11y-hidden,
+.tribe-common .tribe-common-a11y-visual-hide {
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   Top Bar & Search - Using proper specificity (double classes)
+   ========================================================================== */
+
+.tribe-common .tribe-events-c-top-bar {
+  background-color: var(--tec-color-background-secondary);
+  border-color: var(--tec-color-border-default);
+}
+
+.tribe-common .tribe-events-c-search {
+  background-color: var(--tec-color-background-tertiary);
+}
+
+.tribe-common .tribe-events-c-search__input {
+  background-color: var(--tec-color-background-tertiary);
+  color: var(--tec-color-text-primary);
+  border-color: var(--tec-color-border-default);
+}
+
+.tribe-common .tribe-events-c-search__input:focus {
+  border-color: var(--tec-color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.tribe-common .tribe-events-c-search__input::placeholder {
+  color: var(--tec-color-text-secondary);
+}
+
+/* ==========================================================================
+   View Selector & Navigation
+   ========================================================================== */
+
+.tribe-events-c-view-selector__button {
+  background-color: var(--tec-color-background-tertiary);
+  color: var(--tec-color-text-primary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-c-view-selector__button:hover,
+.tribe-events-c-view-selector__button--active {
+  background-color: var(--tec-color-accent-primary);
+  color: #ffffff;
+  border-color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-c-nav__prev,
+.tribe-events-c-nav__next,
+.tribe-events-c-top-bar__today-button {
+  background-color: var(--tec-color-background-tertiary);
+  color: var(--tec-color-text-primary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-c-nav__prev:hover,
+.tribe-events-c-nav__next:hover,
+.tribe-events-c-top-bar__today-button:hover {
+  background-color: var(--tec-color-accent-primary);
+  color: #ffffff;
+  border-color: var(--tec-color-accent-primary);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.tribe-common .tribe-common-c-btn,
+.tribe-common a.tribe-common-c-btn,
+.tribe-events-c-search__button,
+.tribe-events-c-subscribe-dropdown__button {
+  background-color: var(--tec-color-accent-primary);
+  color: #ffffff;
+  border-color: var(--tec-color-accent-primary);
+}
+
+.tribe-common .tribe-common-c-btn:hover,
+.tribe-common a.tribe-common-c-btn:hover,
+.tribe-events-c-search__button:hover,
+.tribe-events-c-subscribe-dropdown__button:hover {
+  background-color: var(--tec-color-accent-primary-hover);
+  border-color: var(--tec-color-accent-primary-hover);
+}
+
+/* ==========================================================================
+   Month View - Calendar Grid
+   ========================================================================== */
+
+.tribe-events-calendar-month__header {
+  background-color: var(--tec-color-background-secondary);
+}
+
+.tribe-events-calendar-month__header-column-title {
+  color: var(--tec-color-text-primary);
+}
+
+.tribe-events-calendar-month__day {
+  background-color: var(--tec-color-background-secondary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-calendar-month__day--current {
+  background-color: var(--tec-color-background-tertiary);
+}
+
+.tribe-events-calendar-month__day-date {
+  color: var(--tec-color-text-primary);
+}
+
+.tribe-events-calendar-month__day--past .tribe-events-calendar-month__day-date {
+  color: var(--tec-color-text-secondary);
+  opacity: 0.6;
+}
+
+.tribe-events-calendar-month__day-cell:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* ==========================================================================
+   Events in Calendar
+   ========================================================================== */
+
+.tribe-events-calendar-month__calendar-event {
+  background-color: var(--tec-color-background-tertiary);
+  border-left-color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-calendar-month__calendar-event:hover {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.tribe-events-calendar-month__calendar-event-title-link {
+  color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-calendar-month__calendar-event-title-link:hover {
+  color: #f59e0b;
+}
+
+.tribe-events-calendar-month__multiday-event-bar {
+  background-color: var(--tec-color-background-tertiary);
+  border-left-color: var(--tec-color-accent-primary);
+}
+
+/* ==========================================================================
+   Tooltips
+   ========================================================================== */
+
+.tribe-events-calendar-month__calendar-event-tooltip {
+  background-color: var(--tec-color-background-tertiary);
+  border-color: var(--tec-color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tribe-events-calendar-month__calendar-event-tooltip-title {
+  color: #f59e0b;
+}
+
+.tribe-events-calendar-month__calendar-event-tooltip-description {
+  color: var(--tec-color-text-primary);
+}
+
+/* ==========================================================================
+   List View
+   ========================================================================== */
+
+.tribe-events-calendar-list__event {
+  background-color: var(--tec-color-background-secondary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-calendar-list__event:hover {
+  border-color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-calendar-list__event-title-link {
+  color: #f59e0b;
+}
+
+.tribe-events-calendar-list__event-title-link:hover {
+  color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-calendar-list__event-date-tag {
+  background-color: var(--tec-color-background-tertiary);
+  color: var(--tec-color-accent-primary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-calendar-list__event-description {
+  color: var(--tec-color-text-primary);
+}
+
+/* ==========================================================================
+   Day View
+   ========================================================================== */
+
+.tribe-events-calendar-day__event {
+  background-color: var(--tec-color-background-secondary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-calendar-day__event:hover {
+  border-color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-calendar-day__time-separator {
+  background-color: var(--tec-color-background-secondary);
+  color: var(--tec-color-text-primary);
+}
+
+/* ==========================================================================
+   Links & Typography
+   ========================================================================== */
+
+.tribe-common a {
+  color: var(--tec-color-accent-primary);
+}
+
+.tribe-common a:hover {
+  color: #f59e0b;
+}
+
+.tribe-common h1,
+.tribe-common h2,
+.tribe-common h3,
+.tribe-common h4,
+.tribe-common h5,
+.tribe-common h6 {
+  color: var(--tec-color-text-primary);
+}
+
+/* ==========================================================================
+   Messages & Loading States
+   ========================================================================== */
+
+.tribe-events-c-messages {
+  background-color: var(--tec-color-background-tertiary);
+  border-color: var(--tec-color-border);
+  color: var(--tec-color-text-primary);
+}
+
+/* ==========================================================================
+   Datepicker
+   ========================================================================== */
+
+.tribe-events-c-top-bar__datepicker-button {
+  background-color: var(--tec-color-background-tertiary);
+  color: var(--tec-color-text-primary);
+  border-color: var(--tec-color-border);
+}
+
+.tribe-events-c-top-bar__datepicker-button:hover {
+  border-color: var(--tec-color-accent-primary);
+  color: var(--tec-color-accent-primary);
+}
+
+.tribe-events-c-top-bar__datepicker-container {
+  background-color: var(--tec-color-background-tertiary);
+  border-color: var(--tec-color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
