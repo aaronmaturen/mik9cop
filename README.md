@@ -481,7 +481,6 @@ theme/
 ├── index.php                    # Main template
 ├── header.php                   # Header template
 ├── footer.php                   # Footer template
-├── sidebar.php                  # Sidebar template
 ├── single.php                   # Single post template
 └── page.php                     # Page template
 ```

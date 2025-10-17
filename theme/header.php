@@ -55,13 +55,7 @@
                             )
                         );
                     } else {
-                        // Default navigation if no menu is set
-                        echo '<ul id="primary-menu" class="menu">';
-                        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'mik9cop' ) . '</a></li>';
-                        echo '<li><a href="' . esc_url( home_url( '/events/' ) ) . '">' . esc_html__( 'Events', 'mik9cop' ) . '</a></li>';
-                        echo '<li><a href="https://k9-hero-guardians.square.site/" target="_blank" rel="noopener">' . esc_html__( 'Store', 'mik9cop' ) . '</a></li>';
-                        echo '<li><a href="https://app.autobooks.co/pay/saginaw-valley-police-canine-association" target="_blank" rel="noopener">' . esc_html__( 'Donate', 'mik9cop' ) . '</a></li>';
-                        echo '</ul>';
+                        // No menu set - menu can be configured in Appearance > Menus
                     }
                     ?>
                 </nav>

@@ -123,6 +123,12 @@ img {
 }
 
 .content-area {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Front page specific - has sidebar for widgets */
+.page-template-front-page .content-area {
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 40px;
@@ -130,7 +136,7 @@ img {
 }
 
 @media (max-width: 968px) {
-  .content-area {
+  .page-template-front-page .content-area {
     grid-template-columns: 1fr;
   }
 }
@@ -139,6 +145,15 @@ img {
   font-size: 0.95em;
   line-height: 1.8;
   color: var(--text-color);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.main-content img,
+.main-content .metaslider,
+.main-content .ms-container {
+  max-width: 100%;
+  height: auto;
 }
 
 .main-content h1,
@@ -348,6 +363,25 @@ img {
 
 .wpcf7 input[type="submit"]:hover {
   background: #2563eb;
+}
+
+/* Contact Form 7 - Two Column Layout */
+.wpcf7 .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.wpcf7 .form-row label {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .wpcf7 .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 /* Fallback Contact Form Styles */
@@ -889,8 +923,43 @@ body.tribe-events-page-template {
 }
 
 /* ==========================================================================
-   WordPress Core
+   WordPress Core & Blocks
    ========================================================================== */
+
+/* Prevent WordPress blocks and content from overflowing */
+.wp-block-image,
+.wp-block-gallery,
+.wp-block-embed,
+.wp-block-group,
+.blocks-gallery-grid,
+.wp-block-columns {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.wp-block-image img,
+.wp-block-gallery img,
+.blocks-gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* MetaSlider specific constraints */
+.metaslider,
+.ms-container,
+.flexslider {
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+.metaslider img,
+.ms-container img,
+.flexslider img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+}
 
 .alignleft {
   float: left;

@@ -77,7 +77,9 @@ get_header();
                                 </div>
 
                                 <div class="form-field">
-                                    <label>&nbsp;</label>
+                                    <label for="contact-last-name" class="screen-reader-text">
+                                        <?php esc_html_e( 'Last Name', 'mik9cop' ); ?>
+                                    </label>
                                     <input type="text" id="contact-last-name" name="last_name" placeholder="Last" required>
                                     <small><?php esc_html_e( 'Last', 'mik9cop' ); ?></small>
                                 </div>
@@ -104,53 +106,6 @@ get_header();
                     ?>
                 </div>
             </div>
-
-            <aside class="sidebar-content">
-                <?php if ( is_active_sidebar( 'homepage-sidebar' ) ) : ?>
-                    <?php dynamic_sidebar( 'homepage-sidebar' ); ?>
-                <?php else : ?>
-                    <!-- Default content if no widgets are added -->
-                    <div style="background: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin-bottom: 20px;">
-                        <h3 style="margin-top: 0;">📝 Sidebar Setup</h3>
-                        <p>To customize this sidebar:</p>
-                        <ol style="font-size: 0.9em; line-height: 1.6;">
-                            <li>Go to <a href="<?php echo admin_url('widgets.php'); ?>">Appearance > Widgets</a></li>
-                            <li>Find "Homepage Sidebar"</li>
-                            <li>Add widgets like:
-                                <ul>
-                                    <li><strong>Gallery</strong> - For K9 photos</li>
-                                    <li><strong>Text</strong> - For donation info</li>
-                                    <li><strong>Image</strong> - For featured photo</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </div>
-
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/k9.jpg"
-                         alt="<?php esc_attr_e( 'K9 Officer with Police Dog', 'mik9cop' ); ?>"
-                         class="k9-image">
-
-                    <h3><?php esc_html_e( 'How to Support the Police K9\'s', 'mik9cop' ); ?></h3>
-
-                    <p><?php esc_html_e( 'Donations may be mailed to:', 'mik9cop' ); ?></p>
-
-                    <address>
-                        <strong>K9 Hero Guardians</strong><br>
-                        3381 Sterling Road<br>
-                        Omer, MI 48749
-                    </address>
-
-                    <p>
-                        <?php esc_html_e( 'You may also make donations', 'mik9cop' ); ?>
-                        <a href="https://app.autobooks.co/pay/saginaw-valley-police-canine-association" target="_blank" rel="noopener" class="donate-link"><?php esc_html_e( 'online', 'mik9cop' ); ?></a>.
-                    </p>
-
-                    <p>
-                        <?php esc_html_e( 'Another way to support the police K9\'s is by shopping our', 'mik9cop' ); ?>
-                        <a href="https://k9-hero-guardians.square.site/" target="_blank" rel="noopener" class="store-link"><?php esc_html_e( 'online store', 'mik9cop' ); ?></a>.
-                    </p>
-                <?php endif; ?>
-            </aside>
         </div>
     </main>
 </div>
